@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    float speed = 5f;
+    float speed = 10f;
     public GameObject missilePrefab;
     public Transform spawn;
     // Start is called before the first frame update
