@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Missile : MonoBehaviour
@@ -27,7 +28,11 @@ public class Missile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Missle hit");
+        UnityEngine.Debug.Log("Missle hit");
         Destroy(gameObject);
     }
-}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        UnityEngine.Debug.Log("Missle trigger");
+    }
+} 
