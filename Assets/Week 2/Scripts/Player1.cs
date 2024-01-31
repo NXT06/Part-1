@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Player : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
     Vector2 direction;
     public Rigidbody2D rigidbody;

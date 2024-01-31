@@ -6,9 +6,9 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour
 {
     Vector2 direction;
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D PlayerRigidbody;
     public float force = 10f;
-    float jumps = 0f;
+    bool jumps = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,22 +19,22 @@ public class Player : MonoBehaviour
     void Update()
     {
         direction.x = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space) == true && jumps == 1)
+        if (Input.GetKeyDown(KeyCode.Space) == true && jumps == true)
         {
 
-            rigidbody.velocity = Vector2.up * force;
-            jumps = 0f;
+            PlayerRigidbody.velocity = Vector2.up * force;
+            jumps = false;
         }
     }
 
     private void FixedUpdate()
     {
-        rigidbody.AddForce(direction * force);
+        PlayerRigidbody.AddForce(direction * force);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         UnityEngine.Debug.Log("Can jump");
-        jumps = 1;
+        jumps = true;
     }
 }
