@@ -23,17 +23,17 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerRigidbody.AddForce(direction * force);
+        PlayerRigidbody.AddForce(direction * force);  //applying force for movement
     }
 
     private void OnCollisionEnter2D()
     {
-        UnityEngine.Debug.Log("Can jump");   //makes jumping available when on platforms
+        //UnityEngine.Debug.Log("Can jump");   //makes jumping available when on platforms
         jumps = true;
     }
     private void OnCollisionExit2D()    //makes jumping unavailable when off platforms
     {
-        UnityEngine.Debug.Log("Can't jump");
+       // UnityEngine.Debug.Log("Can't jump");
         jumps = false;
     }
 }

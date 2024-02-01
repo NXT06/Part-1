@@ -9,6 +9,7 @@ public class Switch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer.enabled = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = myColor;
     }
@@ -16,7 +17,7 @@ public class Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spriteRenderer.enabled = true;
+   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
