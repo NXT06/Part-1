@@ -6,35 +6,29 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour
 {
     Vector2 direction;
-    public Rigidbody2D PlayerRigidbody;
-    public float force = 10f;
+    public Rigidbody2D PlayerRigidbody;  //referencing player object
+    public float jumpForce = 10f;
     bool jumps = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        direction.x = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space) == true && jumps == true)
+        direction.x = Input.GetAxis("Horizontal");              //getting movement inputs for player
+        if (Input.GetKeyDown(KeyCode.Space) == true && jumps == true)   //checks if player is pressing space and if they are touching platforms
         {
 
-            PlayerRigidbody.velocity = Vector2.up * force;
-            jumps = false;
+            PlayerRigidbody.velocity = Vector2.up * jumpForce;      //increases upward velocity by set amount
         }
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter2D()
     {
-        PlayerRigidbody.AddForce(direction * force);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        UnityEngine.Debug.Log("Can jump");
+        UnityEngine.Debug.Log("Can jump");   //makes jumping available when on platforms
         jumps = true;
+    }
+    private void OnCollisionExit2D()    //makes jumping unavailable when off platforms
+    {
+        UnityEngine.Debug.Log("Can't jump");
+        jumps = false;
     }
 }

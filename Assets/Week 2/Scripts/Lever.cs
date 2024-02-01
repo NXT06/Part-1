@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour
+public class Lever1 : MonoBehaviour
 {
 
     public GameObject door;
