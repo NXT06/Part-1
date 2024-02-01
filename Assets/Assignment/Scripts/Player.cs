@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     Vector2 direction;
     public Rigidbody2D PlayerRigidbody;  //referencing player object
-    public float jumpForce = 10f;
+    public float force = 10f;
     bool jumps = false;
 
     // Update is called once per frame
@@ -17,8 +17,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && jumps == true)   //checks if player is pressing space and if they are touching platforms
         {
 
-            PlayerRigidbody.velocity = Vector2.up * jumpForce;      //increases upward velocity by set amount
+            PlayerRigidbody.velocity = Vector2.up * force;      //increases upward velocity by set amount
         }
+    }
+
+    private void FixedUpdate()
+    {
+        PlayerRigidbody.AddForce(direction * force);
     }
 
     private void OnCollisionEnter2D()

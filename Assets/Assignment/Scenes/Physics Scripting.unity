@@ -1998,11 +1998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791424794294704164, guid: 3dc9d9a122914aa4996d17a84e623677, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.96206236
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5791424794294704164, guid: 3dc9d9a122914aa4996d17a84e623677, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.334265
+      value: 18.17
       objectReference: {fileID: 0}
     - target: {fileID: 5791424794294704164, guid: 3dc9d9a122914aa4996d17a84e623677, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6547,10 +6547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d37b97de4446f2439b31ea50ffc4a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lever: {fileID: 0}
-  platformRotation: {fileID: 0}
-  degree: 0
-  on: 0
 --- !u!1 &1786855035
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,7 +6885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRigidbody: {fileID: 1878441754}
-  jumpForce: 13
+  force: 13
 --- !u!212 &1878441756
 SpriteRenderer:
   m_ObjectHideFlags: 0
